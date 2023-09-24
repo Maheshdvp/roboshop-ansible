@@ -1,5 +1,5 @@
-  systemd-setup.ymlsystemd-setup.yml
-- name: install python
+#  systemd-setup.ymlsystemd-setup.yml
+- name: Install python
   ansible.builtin.yum:
     name:
       - python36
@@ -14,6 +14,11 @@
   ansible.builtin.shell: pip3.6 install -r requirements.txt
   args:
     chdir: /app
+
+
+- name: Systemd-setup
+  ansible.builtin.import_tasks: systemd-setup.yml
+
 
 - name: Systemd-setup
   ansible.builtin.import_tasks: systemd-setup.yml
