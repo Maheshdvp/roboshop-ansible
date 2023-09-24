@@ -1,5 +1,5 @@
   systemd-setup.ymlsystemd-setup.yml
-- name: Install python
+- name: install python
   ansible.builtin.yum:
     name:
       - python36
